@@ -9,7 +9,6 @@ public class FrontendExtension {
     }
 
     public void setAppName(String appName) {
-        System.out.println("changed: " + appName);
         this.appName = appName;
     }
 }

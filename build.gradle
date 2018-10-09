@@ -10,7 +10,6 @@ group 'com.rionour.plugin'
 version '5.0.0'
 
 sourceCompatibility = 1.8
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -25,12 +24,18 @@ pluginBundle {
     website = 'https://github.com/renyaoxiang/gradle-frontend.git'
     vcsUrl = 'https://github.com/renyaoxiang/gradle-frontend'
     tags = ['frontend', 'webjars']
+    plugins {
+        frontendPlugin {
+            // id is captured from java-gradle-plugin configuration
+            displayName = 'com.rionour.plugin.frontend'
+        }
+    }
 }
 gradlePlugin {
     plugins {
         frontendPlugin {
             id = 'com.rionour.plugin.frontend'
-            displayName = 'frontend'
+            displayName = 'com.rionour.plugin.frontend'
             description = 'build frontend webjars'
             implementationClass = 'com.rionour.plugin.gradle.frontend.FrontendPlugin'
         }
