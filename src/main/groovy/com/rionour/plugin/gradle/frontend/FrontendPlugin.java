@@ -22,7 +22,7 @@ public class FrontendPlugin implements Plugin<Project> {
             project.getTasks().create("frontendInit", Exec.class, (task) -> {
                 task.setGroup(GroupName);
                 task.setWorkingDir(new File("."));
-                task.setCommandLine("sh", "-c", "create-react-app " + appName() + " --script-version=react-script-ts");
+                task.setCommandLine("sh", "-c", "npx create-react-app " + appName() + " --scripts-version=react-scripts-ts");
             });
             project.getTasks().create("frontendInstall", Exec.class, (task) -> {
                 task.setGroup(GroupName);
